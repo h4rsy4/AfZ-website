@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap");
+@font-face {
+  font-family: "me_quran";
+  src: url("https://kangismet.github.io/fonts/me_quran.eot");
+  src: url("https://kangismet.github.io/fonts/me_quran.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://kangismet.github.io/fonts/me_quran.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* || GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+}
+
+main {
+  /* height: 100vh; */
+  flex-grow: 1;
+  margin: 1em;
+}
+h1,
+h2,
+p {
+  margin: 20px 0;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+.kembali-ke-atas {
+  padding: 15px 0 22px 0;
+}
+hr {
+  margin: 20px 0;
+  border-top: 1px solid rgb(248, 248, 248);
+}
+
+.note {
+  background-color: #ffffcc;
+  margin: 0 -1rem 0 -1rem;
+}
+
+.note p {
+  font-size: 14px;
+  padding: 16px 16px;
+}
+
+/* || LOGO */
+
+.logo {
+  margin: 0;
+  text-align: center;
+  padding: 25px;
+  background-color: black;
+  color: white;
+}
+
+/* || NAVBAR */
+nav {
+  position: sticky;
+  background-color: #fbb300;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 0 5px 0;
+}
+
+.ogol {
+  /* display: none; */
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.9);
+}
+
+.ogol:hover {
+  color: #fbb300;
+}
+
+nav ul {
+  /* background-color: aqua; */
+  width: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.9);
+}
+
+nav ul li a:hover {
+  color: #fbb300;
+}
+
+/* || HAMBURGER MENU */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  padding-right: 20px;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toggle input:hover ~ span {
+  background-color: #fbb300;
+}
+
+/* HAMBURGER MENU ANIMATION */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: rgb(255, 255, 255);
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* INPUT:CHECKED:HOVER */
+
+.menu-toggle input:checked:hover ~ span:nth-child(2) {
+  background-color: rgb(211, 211, 211);
+}
+
+.menu-toggle input:checked:hover ~ span:nth-child(4) {
+  background-color: rgb(211, 211, 211);
+}
+
+/* |||||||||||||||||||||||||||||||||||||| */
+
+.pelajaran {
+  /* margin: 0 -15px 0 -15px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.tanwin {
+  padding: 0 15px;
+  /* background-color: #c7c7c7; */
+  height: 100px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alif-lam {
+  background-color: #c7c7c7;
+  height: 100px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.kata-kerja-maadhi {
+  background-color: #c7c7c7;
+  height: 100px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.kata-kerja-mudhori {
+  background-color: #c7c7c7;
+  height: 100px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* flex-grow: 1; */
+  justify-content: space-around;
+}
+.kata-kerja-pasif {
+  background-color: #c7c7c7;
+  height: 100px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  font-size: larger;
+}
+
+button {
+  background-color: rgb(255, 70, 70);
+  height: 1.7rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  background-color: #222;
+  color: #fff;
+  padding: 25px;
+  border-top: 1px solid gainsboro;
+}
+
+/* || BAHASA ARAB */
+.arab {
+  font-size: 22px;
+  line-height: 48px;
+  font-family: "KFGQPC Uthman Taha Naskh", KFGQPC_Naskh, "Traditional Arabic",
+    Tahoma, sans-serif;
+  font-weight: normal;
+  text-align: right;
+  direction: rtl;
+}
+.container-kombinasi-ar-in {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kombinasi-ar-in {
+  display: flex;
+  justify-content: space-around;
+}
+
+.kombinasi-ar-in1 {
+  display: flex;
+  /* justify-content: space-around */
+  gap: 110px;
+  padding-left: 32px;
+  align-items: center;
+}
+.kombinasi-ar-in2 {
+  display: flex;
+  /* justify-content: space-around */
+  gap: 110px;
+  padding-left: 32px;
+  align-items: center;
+}
+
+.container-contoh {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.div-note {
+  background-color: #ffffcc;
+  margin: 0 -1rem 0 -1rem;
+}
+
+.div-note p {
+  padding: 20px 1.5rem 20px 2rem;
+}
+
+.div-definisi {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  gap: 10px;
+  /* justify-content: center ; */
+  border-top: 1px solid rgb(216, 215, 215);
+  border-bottom: 1px solid rgb(216, 215, 215);
+  padding: 10px 0 10px 0;
+}
+
+.div-macam-macam {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  gap: 10px;
+  /* justify-content: center ; */
+  border-top: 0px solid rgb(216, 215, 215);
+  border-bottom: 1px solid rgb(216, 215, 215);
+  padding: 10px 0 10px 0;
+}
+
+.div-arti {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  gap: 10px;
+  /* justify-content: center ; */
+  border-top: 0px solid rgb(216, 215, 215);
+  border-bottom: 1px solid rgb(216, 215, 215);
+  padding: 10px 0 10px 0;
+}
+
+.div-contoh {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  gap: 10px;
+  /* justify-content: center ; */
+  border-top: 1px solid rgb(216, 215, 215);
+  /* border-bottom: 1px solid rgb(216, 215, 215); */
+  padding: 10px 0 10px 0;
+}
+
+.div-tanwin {
+  /* background-color: red; */
+  margin: 20px 0 0 0;
+}
+
+.div-satu-unit {
+  /* background-color: #da1414; */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* UKURAN MOBILE */
+@media screen and (max-width: 768px) {
+  .ogol {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
